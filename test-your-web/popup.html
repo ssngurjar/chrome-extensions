@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      button {
+		padding: 10px 24px;
+   		font-size: 14px;
+    	line-height: 21px;
+		border-radius: 4px;
+    	color: #FFFFFF;
+		font-family: 'Lato','Roboto',sans-serif,serif;
+    	font-weight: 700;
+   	 	text-transform: uppercase;
+    	-webkit-text-decoration: none;
+   		text-decoration: none;
+   		cursor: pointer;
+		align-items: center !important;
+    	box-sizing: border-box;
+   		position: relative;
+    	border: none;
+		transition: transform 250ms cubic-bezier(0.4,0,0.2,1) 0ms, background-color 250ms cubic-bezier(0.4,0,0.2,1) 0ms, box-shadow 250ms cubic-bezier(0.4,0,0.2,1) 0ms;     
+      } body {
+        width: 748px;
+		overflow: scroll;
+	  }
+	input {
+    	border-radius: 4px;
+   	 	width: 300px;
+    	border: none;
+		font-size: 14px;
+    	font-weight: bold;
+	}
+	textarea {
+		border-radius: 4px;
+   	 	width: 300px;
+    	border: none;
+		font-size: 14px;
+    	font-weight: bold;
+	}
+	:focus {
+		outline: none;
+	}
+
+	.inputDiv {
+		height: 24px;
+		border: 1px solid #adadad;
+		display: flex;
+   		width: min-content;
+		border-radius: 4px;
+		margin: 4px;
+		padding: 8px 16px;
+	}
+	.inputDiv:hover{
+		border: 1px solid #333;
+	}
+	.textAreaDiv {
+		border: 1px solid #adadad;
+		display: flex;
+   		width: min-content;
+		border-radius: 4px;
+		margin: 4px;
+		padding: 8px 16px;
+	}
+	.textAreaDiv:hover{
+		border: 1px solid #333;
+	}
+	#buttons {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		padding: 16px;
+	}
+	#imgbtn {
+		display: flex;
+		flex-direction: column;
+	}
+	#wordSubmit {
+		margin-right: 16px;
+		border-radius: 4px;
+    	border: solid 1px #f75620;
+    	font-family: Lato;
+    	font-size: 14px;
+    	font-weight: 600;
+   		line-height: 1.43;
+    	color: #f75620;
+    	padding: 4px 16px;
+    	cursor: pointer;
+    	outline: none;
+    	background-color: transparent;
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,0.09), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+		
+	}
+	#wordSubmit:hover {
+		background-color: #fdf0e6;
+		box-shadow: 0 9px 12px 1px rgba(0,0,0,0.09), 0 3px 16px 2px rgba(0,0,0,0.06), 0 5px 6px -3px rgba(0,0,0,0.12);
+	}
+	#saveData {
+		width: 200px;
+		background: #f1690c;
+    	color: #FFFFFF;
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,0.09), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+	}
+	#saveData:hover {
+		background: #f98862;
+		box-shadow: 0 9px 12px 1px rgba(0,0,0,0.09), 0 3px 16px 2px rgba(0,0,0,0.06), 0 5px 6px -3px rgba(0,0,0,0.12);
+	}
+	.row {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	.space-between {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.margin {
+		margin: 0px 16px;
+	}
+	#addComment {
+		margin: 0px 0px 0px 16px;
+		background: linear-gradient(134deg,#3674ef 0%,#0f4abd 100%);
+	}
+	#addComment:hover {
+		box-shadow: 0 9px 12px 1px rgba(0,0,0,0.09), 0 3px 16px 2px rgba(0,0,0,0.06), 0 5px 6px -3px rgba(0,0,0,0.12);
+	}
+	#heighLight {
+		color: #0066CC;
+    	background: transparent;
+		padding: 0px !important;
+		margin-left: 16px;
+	}
+	#heighLight:hover {
+		transform: translateY(-1px);
+	}
+	.card {
+		padding: 16px;
+		margin: 16px;
+		box-shadow: 0px 0px 2px 0 rgba(0, 0, 0, 0.14);
+		border: 1px solid #f3f3f3;
+		border-radius: 4px;
+	}
+	.select {
+		border: none;
+		background: transparent;
+    	width: 300px;
+		font-size: 14px;
+    	font-weight: bold;
+	}
+	img {
+		width: 125px;
+		height: 26px;
+		margin-right: 16px;
+	}
+    </style>
+  </head>
+  <body>
+	<div id="imgbtn">
+		<div class="space-between margin">
+		<div class="row">
+			<img src="https://dev-cogoport-s3.imgix.net/cf1d4688be0b4efcb656ec04544043f3.png?auto=format&w=400" />
+			<!-- <h2>Test Your App</h2> -->
+		</div>
+			<div id="buttons">
+				<button id="wordSubmit">Draw Into page</button>
+				<button id="addComment">Add Comment To Page</button>			
+			</div>
+		</div>
+		<div class="card highlightCard">
+			<label for="userWords">Enter text to highlight</label><br/>
+			<div class="row">
+				<div class="inputDiv">
+					<input type="text" name="word" id="userWords">
+				</div>
+				<button id="heighLight">Highlight Text</button>
+			</div>
+		</div>
+		<div class= "card formCard">
+			<label for="bugtype">Type of bug (FrontEnd / Backend)</label><br/>
+			<div class="inputDiv">
+				<select id="bugtype" name="bugtype" class="select">
+					<option value="FrontEnd">Front End</option>
+					<option value="BackEnd">Back End</option>
+					<option value="Both">Both</option>
+			  	</select>
+			</div>
+			<br/>
+			<label for="location">Select Country/Region</label><br/>
+			<div class="inputDiv">
+				<select id="location" name="location" class="select">
+					<option value="India">India</option>
+					<option value="Netherlands">Netherlands</option>
+					<option value="Other_Europe">Other Europe</option>
+			  	</select>
+			</div>
+			<br/>
+			<label for="comment">Your additional Remarks/FeedBack:</label><br/>
+			<div class="textAreaDiv">
+				<textarea type="text" rows="4" cols="50" id="comment" name="comment" placeholder="Type Here"></textarea>
+			</div>
+			<br/>
+			<div id="buttons">
+				<button id="saveData">Submit</button>
+			</div>
+		</div>
+		<div>
+		</div>
+	</div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

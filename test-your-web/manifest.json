@@ -1,0 +1,44 @@
+{
+	"name": "Test Your web",
+	"version": "1.0",
+	"description": "Cogoport's inhouse extension to test website UI",
+	"permissions": [
+		"activeTab",
+		"declarativeContent",
+		"storage",
+		"desktopCapture",
+		"https://*/",
+		"tabs"
+	],
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"options_page": "options.html",
+	"browser_action": {
+		"default_popup": "popup.html",
+		"default_title": "Comment and Test",
+		"default_icon": {
+			"16": "images/get_started16.png",
+			"32": "images/get_started32.png",
+			"48": "images/get_started48.png",
+			"128": "images/get_started128.png"
+		}
+	},
+	"icons": {
+		"16": "images/get_started16.png",
+		"32": "images/get_started32.png",
+		"48": "images/get_started48.png",
+		"128": "images/get_started128.png"
+	},
+	"web_accessible_resources": ["style.css"],
+	"content_scripts": [
+		{
+			"all_frames": true,
+			"js": ["content_script.js", "highlight.js", "insert-comment.js", "set-url.js"],
+			"matches": ["https://*/"],
+			"run_at": "document_idle"
+		}
+	],
+	"manifest_version": 2
+}
